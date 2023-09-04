@@ -28,9 +28,10 @@
     "format": "prettier --write \"**/*.{js,jsx,ts,tsx,json,md,css}\"",
     "start": "gatsby develop",
     "serve": "gatsby serve",
-    "clean": "gatsby clean",
+    "clean": "gatsby clean && rm -rf node_modules package-lock.json yarn.lock",
+    "package-clean": "rm -rf .cache node_modules public package-lock.json yarn.lock",
     "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1",
-    "deploy": "gatsby build && gh-pages -d public -b deploy"
+    "deploy": "yarn build && gh-pages -d public -b deploy"
   },
   "repository": {
     "type": "git",
