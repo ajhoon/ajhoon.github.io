@@ -1,10 +1,12 @@
 {
-  "name": "gatsby-starter-default",
+  "name": "ajhoon-blog",
   "private": true,
-  "description": "A simple starter to get up and developing quickly with Gatsby",
+  "description": "This is Jihoon Ahn's blog created with Gatsby and React.",
   "version": "0.0.1",
   "author": "ajhoon <jihoon5535@gmail.com>",
   "dependencies": {
+    "@emotion/react": "^11.11.1",
+    "eslint-import-resolver-babel-module": "^5.3.2",
     "gatsby": "^5.12.3",
     "gatsby-plugin-image": "^3.12.0",
     "gatsby-plugin-manifest": "^5.12.0",
@@ -15,8 +17,26 @@
     "react-dom": "^18.2.0"
   },
   "devDependencies": {
+    "@types/jest": "^29.5.4",
+    "@types/lodash": "^4.14.198",
+    "@types/react-router-dom": "^5.3.3",
+    "@types/redux-actions": "^2.6.2",
+    "@typescript-eslint/eslint-plugin": "^6.6.0",
+    "@typescript-eslint/parser": "^6.6.0",
+    "eslint": "^8.48.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-config-prettier": "^9.0.0",
+    "eslint-plugin-chai-friendly": "^0.7.2",
+    "eslint-plugin-import": "^2.28.1",
+    "eslint-plugin-jest-dom": "^5.1.0",
+    "eslint-plugin-prettier": "^4.2.1",
+    "eslint-plugin-react": "^7.33.2",
+    "eslint-plugin-react-hooks": "^4.6.0",
+    "eslint-plugin-testing-library": "^6.0.1",
+    "eslint-plugin-unused-imports": "^3.0.0",
     "gh-pages": "^6.0.0",
-    "prettier": "^2.8.8"
+    "prettier": "^2.8.8",
+    "typescript": "^5.2.2"
   },
   "keywords": [
     "gatsby"
@@ -31,7 +51,11 @@
     "clean": "gatsby clean && rm -rf node_modules package-lock.json yarn.lock",
     "package-clean": "rm -rf .cache node_modules public package-lock.json yarn.lock",
     "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1",
-    "deploy": "yarn build && gh-pages -d public -b deploy"
+    "deploy": "yarn build && gh-pages -d public -b deploy",
+    "check:types": "tsc",
+    "check:lint": "eslint --ext .js,.jsx,.ts,.tsx src",
+    "preautofix": "prettier --write '**/*.{js,jsx}'",
+    "autofix": "eslint --fix --quiet --ext .js --fix --quiet --ext .jsx ."
   },
   "repository": {
     "type": "git",
